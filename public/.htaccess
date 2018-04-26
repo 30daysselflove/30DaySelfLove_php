@@ -1,0 +1,11 @@
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{HTTP_HOST} ^[a-z0-9-]+\.([a-z0-9-]+)\..*\.com [NC,OR]
+RewriteCond %{HTTP_HOST} ^([a-z0-9-]+)\..*\.com [NC]
+   
+RewriteRule ^(.*) index.php?route=%1/$1 [QSA] [L]
+
+
